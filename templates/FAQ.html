@@ -1,0 +1,156 @@
+<!-- This page provides basic FAQ for Dining Workforce Schedule Management-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>FAQ</title>
+<style>
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: #D44500;
+    clear: left;
+    text-align: center;
+}
+
+
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+    margin-right: 170px;
+    border-right: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+
+.w3-myfont {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.accordion {
+    background-color: #eee;
+    color: #443;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-color: #D44500;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: black;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<header>
+     <div class="w3-container w3-myfont">
+  <h1>Syracuse University</h1>
+  <h3>Dining Workforce Schedule Management </h3>
+ </header>
+    </div>
+    
+    <div class="w3-conntainer w3-myfont">
+  <center>  <h2>FAQ: Frequently Asked Questions</h2>   </center>  
+<center><p>Click on the questions below.</p> </center>
+<button class="accordion">Can I work as part time employee?</button>
+<div class="panel">
+  <p>Yes, if you are a Syracuse University student, you can work a part time employee at any of our residential dining centers.</p>
+</div>
+
+<button class="accordion">How much will I be paid?</button>
+<div class="panel">
+  <p>Our pay rates start at $10.75, one of highest in campus.</p>
+</div>
+
+<button class="accordion">How many can I work as a part time employee?</button>
+<div class="panel">
+  <p>If you are a International student, you can work as long as 20 hours a week. If you are a citizen, you are allowed to work more than 20 hours per week.</p>
+</div>
+
+<button class="accordion">What is the role of supervisors? And,how can I become one?</button>
+<div class="panel">
+  <p>The responsibilities of a supervisor includes allocation and supervision of student employees in different dining areas. He/She is solely responsible for 
+  cleanliness and smooth functioning of dining center. 
+  There will be vacancies posted for supervisor positions every semester. You need to apply with your resume and cover letter.
+  The hiring managers will schedule a interview and roll out decisions, which will then be notified by mail. </p>
+</div>
+
+<button class="accordion">What is pay rate for a Supervisor?</button>
+<div class="panel">
+  <p>Starting wage of our student supervisor is $12.10!</p>
+</div>
+
+<button class="accordion">How will I receive my payment?</button>
+<div class="panel">
+  <p>Initially, you will be paid by check. Later, you can setup a direct deposit, after you get a Social Security Number.</p>
+</div>
+
+<button class="accordion">How will this website help me?</button>
+<div class="panel">
+  <p>Great question! This website is here to help make part time jobs more accessible to all. Once, you start working 
+  at any residential dining centers, login with your credentials to view all shift available weekly. Feel free to pick up
+  any available shifts,and the supervisor gets notified instantly. 
+  This reduces hassle but also increases convenience of students to pickup, drop and substitute shifts at your availabilty.</p>
+</div>
+
+<button class="accordion">How do I track number of hours worked in a week?</button>
+<div class="panel">
+  <p>Once you login, there's a visualization chart on Dashboard, which indicates the weekly hours you've worked.</p>
+</div>
+
+<button class="accordion">What are benefits of working at Dining centers?</button>
+<div class="panel">
+  <p>We have such a fun,friendly and great atmosphere. You will also get complimentary meals during a shift. </p>
+</div>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+</body>
+</html>

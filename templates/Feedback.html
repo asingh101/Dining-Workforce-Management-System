@@ -1,0 +1,110 @@
+<!-- This page provides functionality to give feedback about Dining Workforce Schedule Management -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Feedback</title>
+<style>
+div.container {
+    width: 100%;
+    
+}
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: #D44500;
+    clear: left;
+    text-align: center;
+}
+   
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #808080;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  width:120px;
+  height:50px;
+}
+
+.button:hover {background-color: #D44500}
+
+.button:active {
+  background-color: #D44500;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #D44500;
+}
+
+.container {
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+
+.w3-myfont {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+</style>
+
+</head>
+<body>
+<div class="container">
+<header>
+     <div class="w3-container w3-myfont">
+  <h1>Syracuse University</h1>
+  <h3>Dining Workforce Schedule Management </h3>
+ </header>
+    </div>
+ 
+ <h3>Feedback Form</h3>
+
+<div class="container">
+  <form action="/action_page.php">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="subject">Write what you feel!</label>
+    <textarea id="subject" name="subject" placeholder="Write something.. Any suggestions/feedback so we can make our services better" style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+</body>
+</html>

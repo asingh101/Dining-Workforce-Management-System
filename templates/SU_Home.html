@@ -1,0 +1,476 @@
+<!-- This is the home page for 'Dining Workforce Schedule Management'. It provides basic information of Dining services at SU.-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dining Workforce Schedule Management</title>
+<!--  CSS for SU_Home page. -->
+<style>
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: #D44500;
+    clear: left;
+    text-align: center;
+}
+
+nav {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+   
+nav ul a {
+    text-decoration: none;
+}
+
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+    margin-right: 170px;
+    border-right: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #808080;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  width:120px;
+  height:50px;
+}
+
+.ui-widget ui-corner-top ui-chatbox {
+ 
+    background-color: yellow;
+}
+
+.button:hover {background-color: #D44500}
+
+.button:active {
+  background-color: #D44500;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);	
+}
+
+.w3-myfont {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+</style>
+<!--  CSS for SU_Home page. -->
+    <meta name="description" content="A hello world bot. A conversational UI built using BotUI.">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://reason.cs.illinois.edu/wenpu1/css/jquery.ui.chatbox.css" />
+    <script type="text/javascript" src="http://reason.cs.illinois.edu/wenpu1/js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="http://reason.cs.illinois.edu/wenpu1/js/jquery-ui-1.8.2.custom.min.js"></script>
+    <script type="text/javascript" src="http://reason.cs.illinois.edu/wenpu1/js/chatboxManager.js"></script>
+    <script type="text/javascript" src="Bot.js">
+</script>
+</head>
+<body>
+<div class="container">
+<header>
+  <div class="w3-container w3-myfont">
+  <h1>Syracuse University</h1>
+  <h3>Dining Workforce Schedule Management </h3>
+ </header>
+ </div> 
+ <nav>
+  <ul>
+    <li><a href="Dining_Info.html"><button class="button">Dining Information</button></a></li><br>
+    <li><a href="LoginPage.html"><button class="button">Login</button></a></li><br>
+    <li><a href="Map.html"><button class="button">Map</button></a></li><br>
+    <li><a href="Brochure.html"><button class="button">Brochure</button></a></li><br>
+    <li><a href="Feedback.html"><button class="button">Website Feedback</button></a></li><br>
+    <li><a href="Privacy.html"><button class="button">Privacy Policy</button></a></li><br>
+    <li><a href="FAQ.html"><button class="button">FAQ</button></a></li><br>
+     <li><a href="AboutSU.html"><button class="button">About SU</button></a></li>
+  </ul>
+</nav>  
+ <article>
+	<div class="w3-container w3-myfont">
+	  <p class="w3-xxlarge">Description: About Us</p>
+	  <h2 class="w3-xxlarge">Welcome to Syracuse student community!</h2>
+	  <p class="w3-xxlarge">This online tool is here to help you!</p>
+	  <p>Why?</p> <p> If you are a part time employee at any of SU Dining and Food Services,
+		then this tool enables you to gain access to relevant information and facilitates time management.</p>
+		<p>How?</p> <p>By logging in to your profile, you have access to information related to shifts available, for you to to grab it up.
+		 Also, it gives you special features like pick, drop shifts,complaint log system,payroll management.</p>
+		  Objectives:
+		   <ul>
+		   <li>Internal Record keeping
+		   <li>Time and attendance tracking
+		   <li>Payroll management
+		   <li>Streamline dining process
+		   <li>Reduce hassle
+		   <li>Make part time jobs more accessible
+		   </ul>
+	</div>
+  </article>
+   <!-- CSS for chat bot -->
+ <style type="text/css">
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+$font-family: 'Open Sans', sans-serif;
+$primary-color: #919292;
+
+.botui-container {
+  font-size: 14px;
+  background-color: #fff;
+  font-family: $font-family;
+}
+
+.botui-messages-container {
+  padding: 20px 20px;
+}
+
+.botui-actions-container {
+  padding: 10px 20px;
+}
+
+.botui-message {
+  min-height: 30px;
+  margin-left: 10px;
+  margin-top: 30px;
+}
+
+.botui-message-content {
+  padding: 7px 13px;
+  border-radius: 15px;
+  color: white;
+  background-color: orange;
+
+  &.human { // if human = true
+    color: lighten($primary-color, 40%);
+    background-color:blue;
+  }
+
+  &.text {
+    line-height: 1.3;
+    color: white;
+  }
+  &.loading {
+    background-color: rgba(206,206,206,0.50);
+    line-height: 1.3;
+    text-align: center;
+  }
+  &.embed {
+    padding: 5px;
+    border-radius: 5px;
+  }
+}
+
+.botui-message-content-link {
+  color: $primary-color;
+}
+
+.botui-actions-text-input {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 5px 7px;
+  font-family: $font-family;
+  background-color: transparent;
+  color: darken($primary-color, 22%);
+  border-bottom: 1px solid $primary-color;
+}
+
+.botui-actions-text-submit {
+  color: #fff;
+  width: 30px;
+  padding: 5px;
+  height: 30px;
+  line-height: 1;
+  border-radius: 50%;
+  border: 1px solid $primary-color;
+  background: darken($primary-color, 10%);
+}
+
+.botui-actions-buttons-button {
+  background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 12px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+
+    margin-left: 10px;
+    margin-top: 20px;
+    
+ 
+ 
+}
+
+.botui-actions-text-select {
+    border: 0;
+    outline: 0;
+    border-radius: 0;
+    padding: 5px 7px;
+    font-family: "Open Sans",sans-serif;
+    background-color: transparent;
+    color: #595a5a;
+    border-bottom: 1px solid #919292;
+}
+
+.botui-actions-text-searchselect {
+    border: 0;
+    outline: 0;
+    border-radius: 0;
+    padding: 5px 7px;
+    font-family: "Open Sans",sans-serif;
+    background-color: transparent;
+    color: #595a5a;
+    border-bottom: 1px solid #919292;
+}
+.botui-actions-text-searchselect .dropdown-toggle {
+    border: none !important;
+}
+
+.botui-actions-text-searchselect .selected-tag {
+  background-color: transparent !important;
+  border: 0 !important;
+}
+
+/*
+  Animation of messages
+  For details on how to change, see: https://vuejs.org/v2/guide/transitions.html
+*/
+
+
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+
+.slide-fade-enter,
+.slide-fade-leave-to {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+/*
+  Animation of loading dots
+*/
+.dot {
+  width: .5rem;
+  height: .5rem;
+  border-radius: .5rem;
+  display: inline-block;
+  background-color: $primary-color;
+  &:nth-last-child(1) {
+    margin-left: .3rem;
+    animation: loading .6s .3s linear infinite;
+  }
+  &:nth-last-child(2) {
+    margin-left: .3rem;
+    animation: loading .6s .2s linear infinite;
+  }
+  &:nth-last-child(3) {
+    animation: loading .6s .1s linear infinite;
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: translate(0, 0);
+    background-color: lighten($primary-color, 10%);
+  }
+
+  25% {
+    transform: translate(0, -3px);
+  }
+  50% {
+    transform: translate(0, 0px);
+    background-color: lighten($primary-color, 10%);
+  }
+  75% {
+    transform: translate(0, 3px);
+  }
+  100% {
+    transform: translate(0, 0px);
+  }
+}
+</style>    
+<!-- This provides basic chat bot-->
+<div class="botui-app-container" id="chatBOT">
+      <bot-ui></bot-ui>
+    </div>
+    <script src="https://cdn.jsdelivr.net/vue/latest/vue.min.js"></script>
+    <script src="https://unpkg.com/botui/build/botui.js"></script>
+    <script>
+         $("#chatBOT").chatbox({id:"chat_div", 
+                                                user:{key : "value"},
+                                                title : "CHATBOT",
+                                                messageSent : function(id, user, msg) {
+                                                }});
+     var botui = new BotUI('chatBOT');
+
+   var chatbot = function (){
+		//This provides basic implementation of chat bot, which provides several questions to the user and responds to them
+       botui.message.bot('Hi What is your name?')
+       .then(function() {
+         return botui.action.text({
+            delay: 1000,
+            action: {
+              placeholder: 'Enter name',
+            }
+         })
+       }).then(function(res){
+          botui.message.bot({
+            delay:1000,
+            content: 'Hi ' + res.value + ' , are you a student or a supervisor?'
+         })
+       }).then(function() {
+            return botui.action.button({
+               delay: 1000,
+               action:[{
+                  text: 'Student',
+                  value: 'student'
+               },{
+                  text: 'Supervisor',
+                  value: 'supervisor'
+               }]
+              
+
+       }).then(function(res) {
+            if (res.value == 'student') {
+              
+            }
+
+            if(res.value == 'supervisor'){
+              
+            }
+         
+       }).then(function(){
+           botui.message.bot({
+                delay:1000,
+                content: 'How can I help you further?'
+            });
+            return botui.action.button({
+              delay:1000,
+              action:[{
+            	  
+                text:'Part Time',
+                value: 'parttime'
+                
+              },
+              
+              
+              {
+            	  
+                text:'jobs',
+                value:'jobs'
+               
+              },
+              
+              {
+            	 
+                text:'dining',
+                value:'dining'
+            
+              },
+              
+              {
+            	 
+                text:'shifts',
+                value:'shifts'
+            
+              },
+              
+              {
+            	 
+                text:'help/info with jobs',
+                value:'help'
+               
+              },
+             
+              {
+            	  
+                text:'Maps',
+                value:'maps'
+           
+              }]
+            })
+         }).then(function (res) {
+           if (res.value == 'parttime') {
+                botui.message.bot({
+                delay:1000,
+                content: '<a href="https://www.sujobopps.com/">Click this link for more job openings</a>' 
+              });
+           }
+           if (res.value == 'jobs') {
+              botui.message.bot({
+                delay:1000,
+                content: '<a href="https://www.sujobopps.com/">Click this link for more jobs</a>'
+              });
+           }
+           if (res.value == 'dining') {
+            botui.message.bot({
+              delay:1000,
+              content: '<a href="Dining_Info.html">Here is the dining information...</a>'
+            });
+           }
+           if (res.value == 'shifts') {
+                botui.message.bot({
+                delay:1000,
+                content: '<a href="Login_Student.html">Click Here!!</a>'
+              });
+           }
+           if (res.value == 'help') {
+            botui.message.bot({
+              delay:1000,
+              content: '<a href="FAQ.html">Redirecting to the help page...</a>'
+            });
+           }
+           if (res.value == 'maps') {
+              botui.message.bot({
+                delay:1000,
+                content: '<a href="https://www.syracuse.edu/about/map/">Click this link for more job openings</a>' 
+                    
+                	
+              });
+           }
+         });
+      });
+  }
+  chatbot();
+  </script>
+	<div class="w3-container w3-myfont">
+		<!-- Footer of this page provides contact information-->
+		<footer>
+		  <p>Contact information: Syracuse University 
+						  900 South Crouse Ave. 
+						  Syracuse, NY 13244 
+						 Phone: +1.315.443.1870</p>
+			<p> &copy; Syracuse University </p>
+		</footer>
+     </div>
+   </div>
+</body>
+</html>
